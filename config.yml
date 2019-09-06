@@ -46,36 +46,29 @@ steps:
       - respond with 03_context.md
 
 # Step 4: Finding info and context
-    - title: First step
-    description: The first step in your course
-    event: issues.assigned
+    - title: Find context
+    description: Mention the author, and the reviewer, in the pull request where commit was created
+    event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue
-- Find the pull request that included said commit from step 3, @mention the author AND the reviewer and ask for clarification? 
-- Event: issue_comment.created
-- We'll check if they mentioned the author and reviewer(s)
-- Instructions for next step: Lots of pull request opened. We need to imrpove this, and are working on it, but the build is failing. (maybe they forget to link it directly) Find the pull request with a 'broken build' aka failing status. Assign themselves to that pull request.
+      - type: gate (validate that the proper author and reviewer are mentioned)
+      - type: gate (validate that the comment is in the proper pull request)
+      - respond: in the pull request where comment was made, with 04_find-broken-build.md
 
 # Step 5:
-    - title: First step
-    description: The first step in your course
+    - title: Assign yourself to the pr with broken build
+    description: Assign yourself to the pr with broken build
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue  
-- Event: assigned themselves
-- Instructions: posted in the pull request once they assign themselves - Emulate something like committing on that branch to fix it. Each PR may have different instructions about what needs fixed, user should commit based on those instructions. 
+      - type: respond in the pull request once they assign themselves with 05_fix-build.md
 
 # Step 6: Something to do with tests
-    - title: First step
-    description: The first step in your course
-    event: issues.assigned
+    - title: Fix the broken build
+    description: Fix the broken build
+    event: push
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue
-- Event: commit
-- We validate their commit to see if it's what we asked for
-- Then we set a passing status
-- Instructions for the next one:
-
+      - type: validate that they did what we said
+      - type: send our own build status
+      - type: createIssue with 06_congratulations.md
