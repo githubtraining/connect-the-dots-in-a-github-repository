@@ -6,10 +6,15 @@ description: >-
 template:
   repo: working-in-large-repositories-template
   name: working-in-large-repositories
+
 before:
   - type: createIssue
     title: Welcome!
     body: new-issue.md
+  - type: createIssue
+    title: Welcome to this repository
+    body: existing-welcome.md
+
 steps:
   - title: First step
     description: The first step in your course
