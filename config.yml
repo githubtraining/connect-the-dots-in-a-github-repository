@@ -1,0 +1,19 @@
+title: Working in large repositories
+tagline: A brand new course on Learning Lab
+description: >-
+  This course is meant to teach skills for working in a larger, older repository
+  with others. 
+template:
+  repo: working-in-large-repositories-template
+  name: working-in-large-repositories
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
