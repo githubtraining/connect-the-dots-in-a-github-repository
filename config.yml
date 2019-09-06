@@ -10,15 +10,72 @@ template:
 before:
   - type: createIssue
     title: Welcome!
-    body: new-issue.md
+    body: 00_welcome-issue.md
   - type: createIssue
     title: Welcome to this repository
-    body: existing-welcome.md
+    body: 00_existing-welcome.md
 
 steps:
-  - title: First step
+
+# Step 1: 
+    - title: Close the linked issue
+    description: Close the linked issue
+    event: issues.closed
+    link: '{{ repoUrl }}'
+    actions:
+      - type: createIssue with 01_crosslink.md
+      - type: respond in both welcome issues with 01_next-step.md
+
+# Step 2: Crosslink
+    - title: Create a crosslink
+    description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
+    event: issue_comment.created
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate (Validate that the comment references the correct issue)
+      - type: gate (Validate it has some kind of description)
+      - response with 02_find-commit.md
+
+# Step 3:
+    - title: Find a commit
+    description: Find a specific commit (related to content concept of issue in step 2)
+    event: issue_comment.created
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate (Validate for the sha or link or whatever we decide to ask for)
+      - respond with 03_context.md
+
+# Step 4: Finding info and context
+    - title: First step
     description: The first step in your course
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue
+- Find the pull request that included said commit from step 3, @mention the author AND the reviewer and ask for clarification? 
+- Event: issue_comment.created
+- We'll check if they mentioned the author and reviewer(s)
+- Instructions for next step: Lots of pull request opened. We need to imrpove this, and are working on it, but the build is failing. (maybe they forget to link it directly) Find the pull request with a 'broken build' aka failing status. Assign themselves to that pull request.
+
+# Step 5:
+    - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue  
+- Event: assigned themselves
+- Instructions: posted in the pull request once they assign themselves - Emulate something like committing on that branch to fix it. Each PR may have different instructions about what needs fixed, user should commit based on those instructions. 
+
+# Step 6: Something to do with tests
+    - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
+- Event: commit
+- We validate their commit to see if it's what we asked for
+- Then we set a passing status
+- Instructions for the next one:
+
