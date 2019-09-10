@@ -14,6 +14,15 @@ before:
   - type: createIssue
     title: Welcome to this repository
     body: 00_existing-welcome.md
+  - type: create pull request with branch create-documentation-structure with body 00_create-documentation-structure.md
+  - type: merge create-documentation-structure branch
+  - type: create pull request with branch add-new-pages with body 00_add-new-pages.md
+  - type: merge add-new-pages branch
+  - type: create a pull request with branch add-navigation with body 00_add-navigation.md
+  - type: merge add-navigation branch
+  - type: create pull request with branch add-git-tips with body 00_add-git-tips.md
+  - type: set status of failing with status api
+
 
 steps:
 
@@ -42,16 +51,16 @@ steps:
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: gate (Validate for the sha or link or whatever we decide to ask for)
+      - type: gate (Validate for the sha 312f872f79e50d505f02be5ddc97b3f7504d0189 or link or whatever we decide to ask for)
       - respond with 03_context.md
 
 # Step 4: Finding info and context
     - title: Find context
-    description: Mention the author, and the reviewer, in the pull request where commit was created
+    description: Mention the author in the pull request where commit was created
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: gate (validate that the proper author and reviewer are mentioned)
+      - type: gate (validate that the proper author is mentioned)
       - type: gate (validate that the comment is in the proper pull request)
       - respond: in the pull request where comment was made, with 04_find-broken-build.md
 

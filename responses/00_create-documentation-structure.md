@@ -1,0 +1,1 @@
+This is a pull request for introducing the documentation strucutre for docsify.
