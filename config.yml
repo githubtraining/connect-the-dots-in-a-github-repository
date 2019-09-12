@@ -12,31 +12,31 @@ before:
   - type: createIssue
     title: Welcome to this repository
     body: 00_existing-welcome.md
-#  - type: createPullRequest
-#    title: Create documentation structure
-#    body: 00_create-documentation-structure.md
-#    head: create-documentation-structure
-#  - type: mergePullRequest
-#    pullRequest: Create documentation structure
-#  - type: createPullRequest
-#    title: Add new pages
-#    body: 00_add-new-pages.md
-#    head: add-new-pages
-#  - type: mergePullRequest
-#    pullRequest: Add new pages
-#  - type: createPullRequest
-#    title: Add navigation
-#    body: 00_add-navigation.md
-#    head: add-navigation
-#  - type: mergePullRequest
-#    pullRequest: Add navigation
-#  - type: createPullRequest
-#    title: Add Git tips
-#    body: 00_add-git-tips.md
-#    head: add-git-tips
-#  - type: createStatus
-#    state: failure
-#    sha: 8a649c52d198e6ab0e80692bb660d08b299f479f
+  - type: createPullRequest
+    title: Create documentation structure
+    body: 00_create-documentation-structure.md
+    head: create-documentation-structure
+  - type: mergePullRequest
+    pullRequest: Create documentation structure
+  - type: createPullRequest
+    title: Add new pages
+    body: 00_add-new-pages.md
+    head: add-new-pages
+  - type: mergePullRequest
+    pullRequest: Add new pages
+  - type: createPullRequest
+    title: Add navigation
+    body: 00_add-navigation.md
+    head: add-navigation
+  - type: mergePullRequest
+    pullRequest: Add navigation
+  - type: createPullRequest
+    title: Add Git tips
+    body: 00_add-git-tips.md
+    head: add-git-tips
+  - type: createStatus
+    state: failure
+    sha: 8a649c52d198e6ab0e80692bb660d08b299f479f
 
 steps:
 
@@ -49,79 +49,79 @@ steps:
       - type: createIssue
         title: Find the similar issue
         body: 01_crosslink.md
-#      - type: createIssue
-#        title: There's something similar here
-#        body: 01_the-similar-crosslink.md
-#      - type: respond
-#        with: 01_next-step.md
-#      - type: respond
-#        with: 01_next-step.md
-#        issue: Welcome to this repository
+      - type: createIssue
+        title: There's something similar here
+        body: 01_the-similar-crosslink.md
+      - type: respond
+        with: 01_next-step.md
+      - type: respond
+        with: 01_next-step.md
+        issue: Welcome to this repository
 
 # Step 2: Crosslink
-#  - title: Create a crosslink
-#    description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
-#    event: issue_comment.created
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: gate
-#        left: '(6)'
-#        operator: test
-#        right: '%payload.comment.body%'
-#      - type: respond
-#        with: 02_find-commit.md
+  - title: Create a crosslink
+    description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
+    event: issue_comment.created
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate
+        left: '(6)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: respond
+        with: 02_find-commit.md
 
 # Step 3:
-#  - title: Find a commit
-#    description: Find a specific commit (related to content concept of issue in step 2)
-#    event: issue_comment.created
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: gate
-#        left: '(312f87)'
-#        operator: test
-#        right: '%payload.comment.body%'
-#      - type: respond
-#        with: 03_context.md
+  - title: Find a commit
+    description: Find a specific commit (related to content concept of issue in step 2)
+    event: issue_comment.created
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate
+        left: '(312f87)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: respond
+        with: 03_context.md
 
 # Step 4: Finding info and context
-#  - title: Find context
-#    description: Mention the author in the pull request where commit was created
-#    event: issue_comment.created
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: gate
-#        left: '(proper author)'
-#        operator: test
-#        right: '%payload.comment.body%'
-#      - type: gate (validate that the comment is in the proper pull request)
-#        left: 1
-#        operator: test
-#        right: '%payload.issue.number%'
-#      - type: respond
-#        with: 04_find-broken-build.md
+  - title: Find context
+    description: Mention the author in the pull request where commit was created
+    event: issue_comment.created
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate
+        left: '(proper author)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: gate (validate that the comment is in the proper pull request)
+        left: 1
+        operator: test
+        right: '%payload.issue.number%'
+      - type: respond
+        with: 04_find-broken-build.md
 
 # Step 5:
-#  - title: Assign yourself to the pr with broken build
-#    description: Assign yourself to the pr with broken build
-#    event: issues.assigned
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: respond
-#        with: 05_fix-build.md
+  - title: Assign yourself to the pr with broken build
+    description: Assign yourself to the pr with broken build
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: respond
+        with: 05_fix-build.md
 
 # Step 6: Something to do with tests
-#  - title: Fix the broken build
-#    description: Fix the broken build
-#    event: push
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: gate
-#        left: '(tricks)'
-#        operator: test
-#        right: '%payload.comment.body%'
-#      - type: createStatus
-#        state: success
-#      - type: createIssue
-#        title: Congratulations!
-#        body: 06_congratulations.md
+  - title: Fix the broken build
+    description: Fix the broken build
+    event: push
+    link: '{{ repoUrl }}'
+    actions:
+      - type: gate
+        left: '(tricks)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: createStatus
+        state: success
+      - type: createIssue
+        title: Congratulations!
+        body: 06_congratulations.md
