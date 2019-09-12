@@ -5,10 +5,9 @@ description: This course is meant to teach skills for working in a larger, older
 template:
   name: working-in-large-repositories
   repo: working-in-large-repositories-template
-
 before:
   - type: createIssue
-    title: Welcome!
+    title: Welcome
     body: 00_welcome-issue.md
   - type: createIssue
     title: Welcome to this repository
