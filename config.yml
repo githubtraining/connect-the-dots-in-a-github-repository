@@ -94,7 +94,7 @@ steps:
         left: '(proper author)'
         operator: test
         right: '%payload.comment.body%'
-      - type: gate (validate that the comment is in the proper pull request)
+      - type: gate
         left: 1
         operator: test
         right: '%payload.issue.number%'
