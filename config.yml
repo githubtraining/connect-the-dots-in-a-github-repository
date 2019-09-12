@@ -65,7 +65,7 @@ steps:
     link: '{{ repoUrl }}'
     actions:
       - type: gate
-        left: '(6)'
+        left: '(8)'
         operator: test
         right: '%payload.comment.body%'
       - type: respond
