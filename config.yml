@@ -14,31 +14,31 @@ before:
   - type: createIssue
     title: Welcome to this repository
     body: 00_existing-welcome.md
-  - type: createPullRequest
-    title: Create documentation structure
-    body: 00_create-documentation-structure.md
-    head: create-documentation-structure
-  - type: mergePullRequest
-    pullRequest: Create documentation structure
-  - type: createPullRequest
-    title: Add new pages
-    body: 00_add-new-pages.md
-    head: add-new-pages
-  - type: mergePullRequest
-    pullRequest: Add new pages
-  - type: createPullRequest
-    title: Add navigation
-    body: 00_add-navigation.md
-    head: add-navigation
-  - type: mergePullRequest
-    pullRequest: Add navigation
-  - type: createPullRequest
-    title: Add Git tips
-    body: 00_add-git-tips.md
-    head: add-git-tips
-  - type: createStatus
-    state: failure
-    sha: 8a649c52d198e6ab0e80692bb660d08b299f479f
+#  - type: createPullRequest
+#    title: Create documentation structure
+#    body: 00_create-documentation-structure.md
+#    head: create-documentation-structure
+#  - type: mergePullRequest
+#    pullRequest: Create documentation structure
+#  - type: createPullRequest
+#    title: Add new pages
+#    body: 00_add-new-pages.md
+#    head: add-new-pages
+#  - type: mergePullRequest
+#    pullRequest: Add new pages
+#  - type: createPullRequest
+#    title: Add navigation
+#    body: 00_add-navigation.md
+#    head: add-navigation
+#  - type: mergePullRequest
+#    pullRequest: Add navigation
+#  - type: createPullRequest
+#    title: Add Git tips
+#    body: 00_add-git-tips.md
+#    head: add-git-tips
+#  - type: createStatus
+#    state: failure
+#    sha: 8a649c52d198e6ab0e80692bb660d08b299f479f
 
 steps:
 
