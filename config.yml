@@ -43,57 +43,87 @@ before:
 steps:
 
 # Step 1: 
-    - title: Close the linked issue
+  - title: Close the linked issue
     description: Close the linked issue
     event: issues.closed
     link: '{{ repoUrl }}'
     actions:
-      - type: createIssue with 01_crosslink.md
-      - type: respond in both welcome issues with 01_next-step.md
+      - type: createIssue
+        title: Find the similar issue
+        body: 01_crosslink.md
+      - type: createIssue
+        title: There's something similar here
+        body: 01_the-similar-crosslink.md
+      - type: respond
+        with: 01_next-step.md
+      - type: respond
+        with: 01_next-step.md
+        issue: Welcome to this repository
 
 # Step 2: Crosslink
-    - title: Create a crosslink
+  - title: Create a crosslink
     description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: gate (Validate that the comment references the correct issue)
-      - type: gate (Validate it has some kind of description)
-      - response with 02_find-commit.md
+      - type: gate
+        left: '(6)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: respond
+        with: 02_find-commit.md
 
 # Step 3:
-    - title: Find a commit
+  - title: Find a commit
     description: Find a specific commit (related to content concept of issue in step 2)
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: gate (Validate for the sha 312f872f79e50d505f02be5ddc97b3f7504d0189 or link or whatever we decide to ask for)
-      - respond with 03_context.md
+      - type: gate
+        left: '(312f87)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: respond
+        with: 03_context.md
 
 # Step 4: Finding info and context
-    - title: Find context
+  - title: Find context
     description: Mention the author in the pull request where commit was created
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
-      - type: gate (validate that the proper author is mentioned)
+      - type: gate
+        left: '(proper author)'
+        operator: test
+        right: '%payload.comment.body%'
       - type: gate (validate that the comment is in the proper pull request)
-      - respond: in the pull request where comment was made, with 04_find-broken-build.md
+        left: 1
+        operator: test
+        right: '%payload.issue.number%'
+      - type: respond
+        with: 04_find-broken-build.md
 
 # Step 5:
-    - title: Assign yourself to the pr with broken build
+  - title: Assign yourself to the pr with broken build
     description: Assign yourself to the pr with broken build
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
-      - type: respond in the pull request once they assign themselves with 05_fix-build.md
+      - type: respond
+        with: 05_fix-build.md
 
 # Step 6: Something to do with tests
-    - title: Fix the broken build
+  - title: Fix the broken build
     description: Fix the broken build
     event: push
     link: '{{ repoUrl }}'
     actions:
-      - type: validate that they did what we said
-      - type: send our own build status
-      - type: createIssue with 06_congratulations.md
+      - type: gate
+        left: '(tricks)'
+        operator: test
+        right: '%payload.comment.body%'
+      - type: createStatus
+        state: success
+      - type: createIssue
+        title: Congratulations!
+        body: 06_congratulations.md
