@@ -41,14 +41,14 @@ before:
 steps:
 
 # Step 1: 
-#  - title: Close the linked issue
-#    description: Close the linked issue
-#    event: issues.closed
-#    link: '{{ repoUrl }}'
-#    actions:
-#      - type: createIssue
-#        title: Find the similar issue
-#        body: 01_crosslink.md
+  - title: Close the linked issue
+    description: Close the linked issue
+    event: issues.closed
+    link: '{{ repoUrl }}'
+    actions:
+      - type: createIssue
+        title: Find the similar issue
+        body: 01_crosslink.md
 #      - type: createIssue
 #        title: There's something similar here
 #        body: 01_the-similar-crosslink.md
