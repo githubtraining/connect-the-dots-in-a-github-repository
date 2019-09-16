@@ -104,7 +104,7 @@ steps:
 # Step 5:
   - title: Assign yourself to the pr with broken build
     description: Assign yourself to the pr with broken build
-    event: issues.assigned
+    event: pull_request.assigned
     link: '{{ repoUrl }}'
     actions:
       - type: respond
@@ -125,6 +125,7 @@ steps:
         right: '%actions.fileContents%'
       - type: createStatus
         state: success
+        sha: '%payload.head_commit.id%'
       - type: createIssue
         title: Congratulations!
         body: 06_congratulations.md
