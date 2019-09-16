@@ -44,7 +44,7 @@ steps:
   - title: Close the linked issue
     description: Close the linked issue
     event: issues.closed
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/1'
     actions:
       - type: createIssue
         title: Find the similar issue
@@ -95,7 +95,7 @@ steps:
         operator: test
         right: '%payload.comment.body%'
       - type: gate
-        left: 1
+        left: '5'
         operator: test
         right: '%payload.issue.number%'
       - type: respond
