@@ -116,10 +116,13 @@ steps:
     event: push
     link: '{{ repoUrl }}'
     actions:
+      - type: getFileContents
+        filename: docs/git-tips.md
+        action_id: fileContents
       - type: gate
         left: '(tricks)'
         operator: test
-        right: '%payload.comment.body%'
+        right: '%actions.fileContents%'
       - type: createStatus
         state: success
       - type: createIssue
