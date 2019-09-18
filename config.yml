@@ -18,18 +18,24 @@ before:
     head: create-documentation-structure
   - type: mergeBranch
     head: create-documentation-structure
+  - type: deleteBranch
+    branch: create-documentation-structure
   - type: createPullRequest
     title: Add new pages
     body: 00_add-new-pages.md
     head: add-new-pages
   - type: mergeBranch
     head: add-new-pages
+  - type: deleteBranch
+    branch: add-new-pages
   - type: createPullRequest
     title: Add navigation
     body: 00_add-navigation.md
     head: add-navigation
   - type: mergeBranch
     head: add-navigation
+  - type: deleteBranch
+    branch: add-navigation
   - type: createPullRequest
     title: Add Git tips
     body: 00_add-git-tips.md
