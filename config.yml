@@ -41,8 +41,15 @@ before:
     body: 00_add-git-tips.md
     head: add-git-tips
   - type: createStatus
-    state: failure
+    state: 
+      left: true
+      operator: ===
+      right: false
+    failure:
+      description: >-
+        Please make sure that all words are spelled correctly.
     sha: ab8fe26dfd24d863908a5074e704358023d11109
+    context: failing-build
 
 steps:
 
