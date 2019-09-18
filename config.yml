@@ -130,6 +130,7 @@ steps:
         sha: '%payload.head_commit.id%'
       - type: respond
         with: 06_please-merge.md
+        issue: Add Git tips
       
 # Step 7: Merge pull request
   - title: Merge the pull request
