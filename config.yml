@@ -41,10 +41,7 @@ before:
     body: 00_add-git-tips.md
     head: add-git-tips
   - type: createStatus
-    state: 
-      left: "0"
-      operator: ===
-      right: "1"
+    state: failure
     failure:
       description: >-
         Please make sure that all words are spelled correctly.
