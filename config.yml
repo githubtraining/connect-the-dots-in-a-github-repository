@@ -42,9 +42,9 @@ before:
     head: add-git-tips
   - type: createStatus
     state: 
-      left: true
+      left: "0"
       operator: ===
-      right: false
+      right: "1"
     failure:
       description: >-
         Please make sure that all words are spelled correctly.
