@@ -6,4 +6,4 @@ This is a new issue that has content similar to another issue. (or they could be
 
 ## :keyboard: Activity: 
 
-Please find the related issue and create a crosslink with a short description. Info about how to find issues and pull requests.
+Please find the related issue and create a crosslink with a short description. Info about how to find issues and pull requests. Comment in this issue, about the other issue. Reference the other one. 

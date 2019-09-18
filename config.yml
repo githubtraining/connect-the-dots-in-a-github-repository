@@ -36,7 +36,7 @@ before:
     head: add-git-tips
   - type: createStatus
     state: failure
-    sha: 8a649c52d198e6ab0e80692bb660d08b299f479f
+    sha: ab8fe26dfd24d863908a5074e704358023d11109
 
 steps:
 
@@ -56,7 +56,7 @@ steps:
         with: 01_next-step.md
       - type: respond
         with: 01_next-step.md
-        issue: Welcome to this repository
+        issue: Welcome
 
 # Step 2: Crosslink
   - title: Create a crosslink
@@ -91,13 +91,9 @@ steps:
     link: '{{ repoUrl }}'
     actions:
       - type: gate
-        left: '(proper author)'
+        left: '(5)'
         operator: test
         right: '%payload.comment.body%'
-      - type: gate
-        left: '5'
-        operator: test
-        right: '%payload.issue.number%'
       - type: respond
         with: 04_find-broken-build.md
 
@@ -126,6 +122,17 @@ steps:
       - type: createStatus
         state: success
         sha: '%payload.head_commit.id%'
+      - type: respond
+        with: 06_please-merge.md
+      
+# Step 7: Merge pull request
+  - title: Merge the pull request
+    description: Merge the final pull request
+    event: push
+    link: '{{ repoUrl }}'
+    actions:
       - type: createIssue
         title: Congratulations!
-        body: 06_congratulations.md
+        body: 07_congratulations.md
+      - type: respond
+        with: 07_final-issue.md
