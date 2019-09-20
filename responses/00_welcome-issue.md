@@ -1,20 +1,24 @@
 # Welcome!
 
-Welcome to this Learning Lab course about working in large repositories. Whether you're working in repositories with a lot of history, with many collaborators, or all of the above, it's important to know how to navigate your workspace.
+Welcome to this Learning Lab course about working in large repositories. For example, you could be working in repositories with a lot of history. Or, working with many collaborators. No matter how your repository is "large", it's important to know how to navigate your workspace.
 
-In this course, you'll learn how to find relevant issues and pull requests, search history to find context, and make connections within GitHub to help others find things too.
+In this course, you'll learn how to do lots of things, like:
+
+- Find relevant issues and pull requests
+- Search history to find context
+- Make connections within GitHub to help others find things
 
 ### Cross-linking issues and pull requests
 
-GitHub has special capabilities to help reference other information on GitHub. For example, if someone links to a GitHub issue from another GitHub issue (even just by `#3`), a link is created to the other issue. At the same time, another link is created in the referenced issue, referencing the issue with the comment. This two-way reference helps people track relationships across GitHub.
+GitHub has special capabilities to help reference other information on GitHub. For example, if someone references a GitHub issue or pull request from another issue or pull request, a link is created. At the same time, a cross-reference is created in the other issue. This two-way reference helps people track relationships of information across GitHub.
 
 ## Step 1: Find an issue
 
-Below, you will see a reference to another issue. In that other issue, a reference was made to _this_ issue. The other issue appears to be a duplicate, so it would be a good idea to close it.
+Below, you will see a reference to another issue. The other issue references _this_ issue. The other issue appears to be a duplicate, so it would be a good idea to close it.
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Find the other issue which is referenced in this issue
+1. Find the other issue referenced from this issue
 2. Close that issue
 
 <hr>
