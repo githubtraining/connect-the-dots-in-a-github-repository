@@ -1,3 +1,3 @@
 # Adding Git Tips
 
-This pull request adds tips and tricks for using Git.
+This pull request adds a page to the documentation about tips and tricks for using Git.
