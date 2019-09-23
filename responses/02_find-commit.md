@@ -17,5 +17,6 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 ### :keyboard: Activity: Find and reference the navigation commit
 
 1. Find the commit where the `docs/_sidebar.md` file was added
+   - _Tip: start this process in a new tab, since you will need it later_ 
 2. Copy some part of the SHA (at least the first 6 characters)
 3. Comment (at least the first 6 characters of) the SHA in this issue

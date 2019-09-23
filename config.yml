@@ -98,7 +98,7 @@ steps:
 
 # Step 4: Finding info and context
   - title: Find context
-    description: Mention the author in the pull request where commit was created
+    description: Create a link to the pull request where the commit was created
     event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
