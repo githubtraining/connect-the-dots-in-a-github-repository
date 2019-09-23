@@ -63,7 +63,7 @@ steps:
         title: There's something similar here
         body: 01_the-similar-crosslink.md
       - type: closeIssue
-        title: There's something similar here
+        issue: There's something similar here
       - type: respond
         with: 01_next-step.md
       - type: respond
