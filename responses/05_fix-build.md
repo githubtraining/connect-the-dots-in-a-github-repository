@@ -8,6 +8,6 @@ People in the future could look for this work and find out lots of things. They 
 
 ### :keyboard: Activity: Correct the spelling to fix the build
 
-1. [Edit the `docs/git-tips.md` file]({{ repoUrl }}/edit/add-git-tips/docs/git-tips.md) on this `add-git-tips` branch
-2. Correct the spelling of the word `trics`, by changing it into `tricks`
-3. Commit the changes
+1. [Edit the `docs/git-tips.md` file]({{ repoUrl }}/edit/add-git-tips/docs/git-tips.md)
+2. Correct the spelling of the word `trics` on line 3 by changing it into `tricks`
+3. Commit the changes on the `add-git-tips` branch
