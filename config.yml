@@ -149,3 +149,4 @@ steps:
         body: 07_congratulations.md
       - type: respond
         with: 07_final-issue.md
+        issue: Add Git tips
