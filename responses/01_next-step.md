@@ -1,1 +1,1 @@
-Your next steps can be found: 
+[Your next steps can be found here]({{ repoUrl }}/issues/7).

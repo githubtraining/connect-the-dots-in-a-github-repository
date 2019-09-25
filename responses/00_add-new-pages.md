@@ -1,3 +1,3 @@
-# adding new pages
+# Adding new pages
 
-pull request for adding new pages
+This pull request introduces new pages to the documentation.

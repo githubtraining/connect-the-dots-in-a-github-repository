@@ -1,7 +1,25 @@
-# Welcome to this course!
+# Welcome!
 
-## Step 1: Find and close the crosslinked issue
+Welcome to this Learning Lab course about working in large repositories. For example, you could be working in repositories with a lot of history. Or, working with many collaborators. No matter how your repository is "large", it's important to know how to navigate your workspace.
 
-### :keyboard: Activity: 
+In this course, you'll learn how to do lots of things, like:
 
-Find the issue that is crosslinked automatically from the instruction issue and close it because we don't need multiple threads with the same things. Maybe there's some info to bring over? Describing course goals really high level, and describing crosslinks between issues and pull requests
+- Find relevant issues and pull requests
+- Search history to find context
+- Make connections within GitHub to help others find things
+
+### Cross-linking issues and pull requests
+
+GitHub has special capabilities to help reference other information on GitHub. For example, if someone references a GitHub issue or pull request from another issue or pull request, a link is created. At the same time, a cross-reference is created in the other issue. This two-way reference helps people track relationships of information across GitHub.
+
+## Step 1: Find an issue
+
+Below, you will see a reference to another issue. The other issue references _this_ issue. The other issue appears to be a duplicate, so it would be a good idea to close it.
+
+### :keyboard: Activity: Find and close the cross-linked issue
+
+1. Find the other issue referenced from this issue
+2. Close that issue
+
+<hr>
+<h3 align="center">I will respond with your next steps in that issue.</h3>
