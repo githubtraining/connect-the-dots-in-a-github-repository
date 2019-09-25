@@ -16,7 +16,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 ### :keyboard: Activity: Find and reference the navigation commit
 
-1. Navigate to the [Code tab of this repository]({{ repoURL }})
+1. Navigate to the [Code tab of this repository]({{ repoUrl }})
    - _Tip: start this process in a new tab, since you will need it later_
 2. Click `docs` to navigate into the `/docs` directory
 3. Click `_sidebar.md` to view the file
