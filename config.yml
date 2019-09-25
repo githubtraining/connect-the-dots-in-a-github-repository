@@ -51,8 +51,8 @@ before:
 steps:
 
 # Step 1: 
-  - title: Close the linked issue
-    description: Close the linked issue
+  - title: References within issues
+    description: Find and close the duplicate cross-linked issue
     event: issues.closed
     link: '{{ repoUrl }}/issues/1'
     actions:
@@ -72,7 +72,7 @@ steps:
 
 # Step 2: Crosslink
   - title: Create a crosslink
-    description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
+    description: Find the relevant or duplicate issue or pull request, and create a crosslink
     event: issue_comment.created
     link: '{{ repoUrl }}/issues/7'
     actions:
@@ -85,7 +85,7 @@ steps:
 
 # Step 3:
   - title: Find a commit
-    description: Find a specific commit (related to content concept of issue in step 2)
+    description: Find the commit associated with the creation of the sidebar file
     event: issue_comment.created
     link: '{{ repoUrl }}/issues/7'
     actions:
@@ -110,8 +110,8 @@ steps:
         with: 04_find-broken-build.md
 
 # Step 5:
-  - title: Assign yourself to the pr with broken build
-    description: Assign yourself to the pr with broken build
+  - title: Assign yourself
+    description: Assign yourself to the pull request with a broken build
     event: pull_request.assigned
     link: '{{ repoUrl }}/issues/7'
     actions:
@@ -120,7 +120,7 @@ steps:
 
 # Step 6: Something to do with tests
   - title: Fix the broken build
-    description: Fix the broken build
+    description: Fix the broken build in the pull request with a new commit
     event: push
     link: '{{ repoUrl }}/pull/6'
     actions:
@@ -139,7 +139,7 @@ steps:
         issue: Add Git tips
       
 # Step 7: Merge pull request
-  - title: Merge the pull request
+  - title: Merge
     description: Merge the final pull request
     event: push
     link: '{{ repoUrl }}/pull/6'
