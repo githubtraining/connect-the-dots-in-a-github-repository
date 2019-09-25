@@ -1,9 +1,9 @@
-This is the description we show on the course page [here](https://lab.github.com/githubtraining/working-in-large-repositories). This first paragraph will be featured at the top of the page so make it great.
-​
+Welcome to this Learning Lab course about working in large repositories. For example, you could be working in repositories with a lot of history. Or, working with many collaborators. No matter how your repository is "large", it's important to know how to navigate your workspace.
 
-​
-Be sure to tell the learner about the technology you are teaching, why they should learn it, how they can use it, and what you will teach them.
-​
+Before you take this course, you may want to go through the [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) course on Learning Lab.
 
+In this course, you'll learn how to do lots of things, like:
 
-Include information on how they can reach you for questions about the content or course. 
+- Find relevant issues and pull requests
+- Search history to find context
+- Make connections within GitHub to help others find things
