@@ -63,7 +63,7 @@ steps:
         title: There's something similar here
         body: 01_the-similar-crosslink.md
       - type: closeIssue
-        issue: There's something similar here
+        issue: Welcome
       - type: respond
         with: 01_next-step.md
       - type: respond
@@ -74,7 +74,7 @@ steps:
   - title: Create a crosslink
     description: Find the relevant or duplicate issue or pull request, and create a contexual crosslink
     event: issue_comment.created
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
         left: '(8)'
@@ -87,7 +87,7 @@ steps:
   - title: Find a commit
     description: Find a specific commit (related to content concept of issue in step 2)
     event: issue_comment.created
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
         left: '(312f87)'
@@ -100,7 +100,7 @@ steps:
   - title: Find context
     description: Create a link to the pull request where the commit was created
     event: issue_comment.created
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
         left: '(5)'
@@ -113,7 +113,7 @@ steps:
   - title: Assign yourself to the pr with broken build
     description: Assign yourself to the pr with broken build
     event: pull_request.assigned
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/7'
     actions:
       - type: respond
         with: 05_fix-build.md
@@ -122,7 +122,7 @@ steps:
   - title: Fix the broken build
     description: Fix the broken build
     event: push
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/pull/6'
     actions:
       - type: getFileContents
         filename: docs/git-tips.md
@@ -142,7 +142,7 @@ steps:
   - title: Merge the pull request
     description: Merge the final pull request
     event: push
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/pull/6'
     actions:
       - type: createIssue
         title: Congratulations!
