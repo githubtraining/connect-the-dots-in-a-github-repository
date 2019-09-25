@@ -6,13 +6,13 @@ Next, we'll practice finding issues and creating crosslinks to improve discovera
 
 ### Finding issues and pull requests
 
-You can search for issues and pull requests in many ways, like by author, title, or even the most recently updated. You can also search closed issues. You can read all about the different ways to search in the [GitHub Help documentation](https://help.github.com/en/articles/searching-issues-and-pull-requests#search-by-open-or-closed-state).
+You can search for issues and pull requests in many ways, like by author, title, or even the most recently updated. You can also search closed issues. You can read all about the different ways to search in the [Searching Issues or Pull Requests](https://help.github.com/en/articles/searching-issues-and-pull-requests#search-by-open-or-closed-state) article.
 
 ### Creating references
 
 When you link to another issue, a reference within GitHub is automatically created. In fact, you don't even need to include the full link. If you were to type `#5` within a comment, that would turn into a link to issue or pull request number 5.
 
-When you want to create a crosslink, try typing the title of an issue or pull request directly after you type the `#` symbol. GitHub will suggest issues or pull requests that will link to the right place. To learn even more, check out [GitHub's documentation](https://help.github.com/en/articles/autolinked-references-and-urls).
+When you want to create a crosslink, try typing the title of an issue or pull request directly after you type the `#` symbol. GitHub will suggest issues or pull requests that will link to the right place. To learn even more, check out the [Autolinked References and URLs](https://help.github.com/en/articles/autolinked-references-and-urls) article.
 
 ## Step 2: Create crosslinks
 
@@ -20,4 +20,3 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 1. Please find the related issue
 2. Comment in this issue with a reference to the related issue with a short description
-
