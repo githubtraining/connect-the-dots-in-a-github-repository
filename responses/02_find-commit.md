@@ -16,7 +16,11 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 ### :keyboard: Activity: Find and reference the navigation commit
 
-1. Find the commit where the `docs/_sidebar.md` file was added
-   - _Tip: start this process in a new tab, since you will need it later_ 
-2. Copy some part of the SHA (at least the first 6 characters)
-3. Comment (at least the first 6 characters of) the SHA in this issue
+1. Navigate to the [Code tab of this repository]({{ repoURL }})
+   - _Tip: start this process in a new tab, since you will need it later_
+2. Click `docs` to navigate into the `/docs` directory
+3. Click `_sidebar.md` to view the file
+4. On the top right side of the file, click **Blame** to see the details of the most recent revision
+5. Click the commit message, `add sidebar to documentation` to see the commit details
+6. Copy some part of the SHA (at least the first 6 characters of the 40 character hexadecimal string listed after `commit`)
+7. Comment (at least the first 6 characters of) the SHA in **this issue**
