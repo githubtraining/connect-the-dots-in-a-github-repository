@@ -34,3 +34,4 @@ In the story above, you might want to `@mention` the authors involved in the art
 1. In the tab where you found the commit SHA in the last step, click the link to the related pull request
 2. Copy a reference (like a link) to this pull request
 3. Reference the pull request in this issue
+  - _Tip: Try typing `#5` and seeing what happens! Do you notice a reference to the `Add Navigation` pull request?_
