@@ -18,7 +18,7 @@ Below, you will see a reference to another issue. The other issue references _th
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Find the other issue referenced from this issue
+1. Navigate to the other issue referenced from this issue
 2. Close that issue
 
 <hr>
