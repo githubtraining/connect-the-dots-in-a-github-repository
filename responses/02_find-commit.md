@@ -6,7 +6,7 @@ The obvious reason to find things in history is to know about history. With issu
 
 ### What's `git blame`?
 
-Git Blame is a Git functionality that shows what revision and author last modified each line of a file. Information like who made a commit, when, and even why can be found this way. If you aren't sure who introduced certain changes to a file, you can use `git blame` to find out. While `git blame` sounds rather accusatory, this can be used to understand the context around decisions.
+`git blame` is a Git functionality that shows what revision and author last modified each line of a file. Information like who made a commit, when, and even why can be found this way. If you aren't sure who introduced certain changes to a file, you can use `git blame` to find out. While `git blame` sounds rather accusatory, this can be used to understand the context around decisions.
 
 ### What's a SHA?
 
@@ -16,7 +16,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 ### :keyboard: Activity: Find and reference the navigation commit
 
-1. Navigate to the [Code tab of this repository]({{ repoURL }})
+1. Navigate to the [Code tab of this repository]({{ repoUrl }})
    - _Tip: start this process in a new tab, since you will need it later_
 2. Click `docs` to navigate into the `/docs` directory
 3. Click `_sidebar.md` to view the file

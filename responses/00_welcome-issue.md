@@ -2,6 +2,8 @@
 
 Welcome to this Learning Lab course about working in large repositories. For example, you could be working in repositories with a lot of history. Or, working with many collaborators. No matter how your repository is "large", it's important to know how to navigate your workspace.
 
+Before you take this course, you may want to go through the [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) course on Learning Lab.
+
 In this course, you'll learn how to do lots of things, like:
 
 - Find relevant issues and pull requests
@@ -18,7 +20,7 @@ Below, you will see a reference to another issue. The other issue references _th
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Find the other issue referenced from this issue
+1. Navigate to the other issue referenced from this issue
 2. Close that issue
 
 <hr>
