@@ -23,7 +23,7 @@ Just like that, you've found the people at your company who can help move your p
 
 When you're looking at a commit on GitHub, you can see a lot of information. From this view, you can also find a link to the pull request in which the commit was created. We'll use this in the next step.
 
-![screenshot of a view of a commit on GitHub, highlighting the link to the pull request](https://github.com/githubtraining/working-in-large-repositories/blob/master/responses/images/pr-link.png?raw=true)
+![screenshot of a view of a commit on GitHub, highlighting the link to the pull request](https://user-images.githubusercontent.com/16547949/67341250-3edbb480-f4fd-11e9-805a-6bce5a8ba2d1.png)
 
 ## Step 4: Give more context
 
