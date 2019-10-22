@@ -4,7 +4,7 @@ Historical context of development includes references to other related work, lik
 
 ### Real life examples
 
-If you'd like to see what this looks like in active repositories, take a look at [Electron](https://github.com/electron/electron/pulls) or [Visual Studio Code](https://github.com/microsoft/vscode/pulls). You can look through pull requests, see pull request statutes, and maybe even see the log outputs.
+If you'd like to see what this looks like in active repositories, take a look at [Electron](https://github.com/electron/electron/pulls) or [Visual Studio Code](https://github.com/microsoft/vscode/pulls). You can look through pull requests, see pull request statuses, and maybe even see the log outputs.
 
 ## Step 5: Find the broken build
 
