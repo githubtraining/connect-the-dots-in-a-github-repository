@@ -66,9 +66,14 @@ before:
     method: projects.createCard
     owner: '%payload.repository.owner.login%'
     repo: '%payload.repository.name%'
-    column_id: '%actions.doneColumn.data.id%'
     content_id: '%actions.gitTipsPR.data.id%'
     content_type: pullRequest
+    action_id: prCard
+  - type: octokit
+    method: projects.moveCard
+    card_id: '%actions.prCard.data.id%'
+    position: top
+    column_id: '%actions.doneColumn.data.id%'
 
 steps:
 
