@@ -68,6 +68,7 @@ before:
     repo: '%payload.repository.name%'
     content_id: '%actions.gitTipsPR.data.id%'
     content_type: pullRequest
+    column_id: '%actions.doneColumn.data.id%'
     action_id: prCard
   - type: octokit
     method: projects.moveCard
