@@ -40,6 +40,7 @@ before:
     title: Add Git tips
     body: 00_add-git-tips.md
     head: add-git-tips
+    action_id: gitTipsPR
   - type: createStatus
     state: "failure"
     failure:
@@ -47,6 +48,27 @@ before:
         Please make sure that all words are spelled correctly.
     sha: ab8fe26dfd24d863908a5074e704358023d11109
     context: failing-build
+  - type: createProjectBoard
+    name: v1.0.0
+    description: Planning for v1.0.0 release
+    columns:
+    - Backlog
+    - In progress
+    action_id: projectBoard
+  - type: octokit
+    method: projects.createColumn
+    project_id: '%actions.projectBoard.data.id%'
+    name: Done
+    owner: '%payload.repository.owner.login%'
+    repo: '%payload.repository.name%'
+    action_id: doneColumn
+  - type: octokit
+    method: projects.createCard
+    owner: '%payload.repository.owner.login%'
+    repo: '%payload.repository.name%'
+    column_id: '%actions.doneColumn.data.id%'
+    content_id: '%actions.gitTipsPR.data.id%'
+    content_type: pullRequest
 
 steps:
 
