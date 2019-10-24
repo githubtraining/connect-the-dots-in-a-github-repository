@@ -73,7 +73,7 @@ before:
     owner: '%payload.repository.owner.login%'
     repo: '%payload.repository.name%'
     content_id: '%actions.gitTipsPR.data.id%'
-    content_type: pullRequest
+    content_type: PullRequest
     column_id: '%actions.doneColumn.data.id%'
     action_id: prCard
 
