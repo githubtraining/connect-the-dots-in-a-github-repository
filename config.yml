@@ -76,11 +76,6 @@ before:
     content_type: pullRequest
     column_id: '%actions.doneColumn.data.id%'
     action_id: prCard
-  - type: octokit
-    method: projects.moveCard
-    card_id: '%actions.prCard.data.id%'
-    position: top
-    column_id: '%actions.doneColumn.data.id%'
 
 steps:
 
