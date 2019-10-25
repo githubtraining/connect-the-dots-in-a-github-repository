@@ -2,6 +2,8 @@
 
 This pull request introduces navigation to the documentation.
 
+_Note: in a step in this course, you'll be asked to perform the steps below. They're listed here for your convenience._
+
 ### :keyboard: Activity: Add to v1.0.0 project
 
 1. Click on **Projects** on the right side of this pull request.
