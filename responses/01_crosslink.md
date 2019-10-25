@@ -2,7 +2,7 @@
 
 When you're working in a repository, you might want to find other issues or pull requests. Maybe someone has told you about a conversation, but they didn't send you a direct link. Or, maybe you remember an issue from the past but you don't know exactly where it is.
 
-Next, we'll practice finding issues and creating crosslinks to improve discoverability later.
+In this case, we want to see if there's another reference to the broken sidebar somewhere on this repository, and track down any work that's been attempted related to this. Let's see what we can find out!
 
 ### Finding issues and pull requests
 
@@ -19,7 +19,8 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 ### :keyboard: Activity: Find and link to a related issue
 
 1. Please find the issue that is similar to this one
-   - This does _not_ mean that the issue is referenced, like in the last step - you should go look in the [Issues]({{ repoUrl }}/issues) tab to find an issue with a similar title
+   - This does _not_ mean that the issue is referenced, like in the last step. This time, we're looking for a related issue that hasn't been connected to this one in any way.
+   - Try lookin in the [Issues]({{ repoUrl }}/issues) tab to find an issue with a similar title to this one.
 2. Comment in this issue with a reference to the related issue and a short description, something along the lines of "this is a duplicate of issue #(number)".
 
 I'll respond when you comment on this issue.

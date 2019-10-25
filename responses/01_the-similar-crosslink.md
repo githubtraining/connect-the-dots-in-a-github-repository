@@ -1,1 +1,1 @@
-The word "tricks" is misspelled on the sidebar. Can someone fix this?
+I think this project would be better if it had a sidebar.
