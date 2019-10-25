@@ -35,8 +35,9 @@ You'll notice that this issue is part of [Project v1.0.0]({{ repoUrl }}/projects
 
 ### :keyboard: Activity: Use a project to track related efforts
 
-1. In the tab where you found the commit SHA in the last step, click the link to the related pull request
+1. Go back to {{ commitId }}.
+1. Click the link to the related pull request.
 1. In the pull request, click on **Projects** on the right side, and choose the `v1.0.0` project from the list.
 1. When the PR is added to the project, you'll see it's _Awaiting triage_, let's triage it! Click on the project drop down, and place it into the **In Progress** column.
 
-I'll respond when you've added the pull request to the In Progress column of the v1.0.0 project.
+I'll respond in this issue when you've added the pull request to the In Progress column of the v1.0.0 project.

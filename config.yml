@@ -118,6 +118,8 @@ steps:
         right: '%payload.comment.body%'
       - type: respond
         with: 03_context.md
+        data:
+          commitId: '%payload.comment.body%'
 
 # Step 4: Finding info and context
   - title: Find context
