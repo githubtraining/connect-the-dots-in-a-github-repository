@@ -1,3 +1,5 @@
+Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation occurred around this change. 
+
 # Context
 
 As we've already seen, conversations in issues and pull requests can reference other work.
@@ -40,4 +42,4 @@ One way we can do this, is by using [GitHub Projects](https://help.github.com/en
 1. In the pull request, click on **Projects** on the right side, and choose the `v1.0.0` project from the list.
 1. When the PR is added to the project, you'll see it's _Awaiting triage_, let's triage it! Click on the project drop down, and place it into the **Done** column.
 
-I'll respond in this issue when you've added the pull request to the In Progress column of the v1.0.0 project.
+I'll respond in this issue when you've added the pull request to the Done column of the v1.0.0 project.
