@@ -27,11 +27,11 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 ## Step 4: Give more context
 
-In the story above, you might want to `@mention` the authors involved in the article. You may want to find them in person, or set up another way to collaborate. In this case, we want to bring the information that you found through the commit to the greater conversation.
+In the story above, you might want to `@mention` the authors involved in the article. You may want to find them in person, or set up another way to collaborate. In this case, we want to collate the spread out information that you found through the commit.
 
-### :keyboard: Activity: Reference the related pull request in this issue
+### :keyboard: Activity: Use a project to track related efforts
 
 1. In the tab where you found the commit SHA in the last step, click the link to the related pull request
-2. Copy a reference (like a link) to this pull request
-3. Reference the pull request in this issue
-     - _Tip: Try typing `#5` and seeing what happens! Do you notice a reference to the `Add Navigation` pull request?_
+1. In the pull request, click on **Projects** on the right side, and choose the `v1.0.0` project from the list.
+
+I will respond in this issue when you've added the pull request to a project board. 

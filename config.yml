@@ -122,15 +122,22 @@ steps:
 # Step 4: Finding info and context
   - title: Find context
     description: Create a link to the pull request where the commit was created
-    event: issue_comment.created
+    event: project_card.created
     link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
-        left: '(5)'
+        left: 'pull/5'
         operator: test
-        right: '%payload.comment.body%'
+        right: '%payload.project_card.content_url%'
+        else:
+        - type: respond
+          with: e-wrong-pr.md
+          data:
+            commit: 312f87
+          issue: Find the similar issue
       - type: respond
         with: 04_find-broken-build.md
+        issue: Find the similar issue
 
 # Step 5:
   - title: Assign yourself
