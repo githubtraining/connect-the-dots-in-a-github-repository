@@ -203,8 +203,7 @@ steps:
           - left: '%payload.pull_request.title%'
             operator: ===
             right: Add Git tips
-          - type: gate
-            left: '(tricks)'
+          - left: '(tricks)'
             operator: test
             right: '%actions.fileContents%'
         else:
