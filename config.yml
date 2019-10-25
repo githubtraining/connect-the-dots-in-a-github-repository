@@ -1,10 +1,9 @@
-title: Working in large repositories
-tagline: A brand new course on Learning Lab
-description: This course will teach you skills for working in a larger, older repository
-  with others. 
+title: Connect the dots in a GitHub repository
+tagline: Learn how to navigate through a repository's history and context.
+description: This course will teach you skills for finding relevant conversations, commits, and projects in a repository.
 template:
-  name: working-in-large-repositories
-  repo: working-in-large-repositories-template
+  name: connect-the-dots-in-a-github-repository
+  repo: connect-the-dots-in-a-github-repository-template
 before:
   - type: createIssue
     title: Welcome
