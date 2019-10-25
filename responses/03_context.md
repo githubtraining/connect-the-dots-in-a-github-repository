@@ -29,9 +29,14 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 In the story above, you might want to `@mention` the authors involved in the article. You may want to find them in person, or set up another way to collaborate. In this case, we want to collate the spread out information that you found through the commit.
 
+![a screenshot of this issue with the projects section highlighted on the right, and a second screenshot of v1.0.0 project](https://user-images.githubusercontent.com/16547949/67590688-b0984600-f729-11e9-8d46-cc243d666331.png)
+
+You'll notice that this issue is part of [Project v1.0.0]({{ repoUrl }}/projects/1). Let's add the related pull request to the same project.
+
 ### :keyboard: Activity: Use a project to track related efforts
 
 1. In the tab where you found the commit SHA in the last step, click the link to the related pull request
 1. In the pull request, click on **Projects** on the right side, and choose the `v1.0.0` project from the list.
+1. When the PR is added to the project, you'll see it's _Awaiting triage_, let's triage it! Click on the project drop down, and place it into the **In Progress** column.
 
-I will respond in this issue when you've added the pull request to a project board. 
+I'll respond when you've added the pull request to the In Progress column of the v1.0.0 project.

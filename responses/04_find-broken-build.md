@@ -1,3 +1,5 @@
+Great! Now that both this issue and the associated pull request are in the same project, it will be easier to track and organize the related work. 
+
 # More commit context
 
 Historical context of development includes references to other related work, like tests.

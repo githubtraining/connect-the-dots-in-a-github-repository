@@ -2,5 +2,6 @@ The pull request you moved into the project isn't the one I expected. If you go 
 
 1. Go to PR #5.
 1. In the pull request, click on **Projects** on the right side, and choose the `v1.0.0` project from the list.
+1. Click on where it says _Awaiting triage_, and click on the **In Progress** column.
 
-I'll respond when you've added the pull request to the project.
+I'll respond when you've added the pull request to the In Progress column of the v1.0.0 project.

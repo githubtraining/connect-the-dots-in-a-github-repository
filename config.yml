@@ -126,7 +126,7 @@ steps:
     link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
-        left: 'pull/5'
+        left: '(5)'
         operator: test
         right: '%payload.project_card.content_url%'
         else:
