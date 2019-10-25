@@ -20,7 +20,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 1. Please find the issue that is similar to this one
    - This does _not_ mean that the issue is referenced, like in the last step. This time, we're looking for a related issue that hasn't been connected to this one in any way.
-   - Try lookin in the [Issues]({{ repoUrl }}/issues) tab to find an issue with a similar title to this one.
+   - Try looking in the [Issues]({{ repoUrl }}/issues) tab to find an issue with a similar title to this one.
 2. Comment in this issue with a reference to the related issue and a short description, something along the lines of "this is a duplicate of issue #(number)".
 
 I'll respond when you comment on this issue.
