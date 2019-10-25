@@ -1,12 +1,12 @@
 <p align="center"><a href="https://lab.github.com/"><img alt="Learning Lab bot" src="https://user-images.githubusercontent.com/16547949/62085817-83232580-b22a-11e9-8693-7c54205b04e5.png"></a></p>
 
-<h1 align="center">Course: Working in Large Repositories </h1>
+<h1 align="center">Course: Connect the dots in a GitHub repository </h1>
 
-This repository powers the Learning Lab course [_Working in Large Repositories_](https://lab.github.com/githubtraining/working-in-large-repositories). 
+This repository powers the Learning Lab course [_Connect the dots in a GitHub repository_](https://lab.github.com/githubtraining/connect-the-dots-in-a-github-repository). 
 
 Every Learning Lab course is made up of:
-- a [course repository](https://github.com/githubtraining/working-in-large-repositories), and
-- a [template repository](https://github.com/githubtraining/working-in-large-repositories-template)
+- a [course repository](https://github.com/githubtraining/connect-the-dots-in-a-github-repository), and
+- a [template repository](https://github.com/githubtraining/connect-the-dots-in-a-github-repository-template)
 
 The course repository is written in YAML and Markdown. The template repository could be written in any language that supports the learning objectives.
 
