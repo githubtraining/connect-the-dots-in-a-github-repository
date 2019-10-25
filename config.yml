@@ -62,12 +62,6 @@ before:
     owner: '%payload.repository.owner.login%'
     repo: '%payload.repository.name%'
     action_id: doneColumn
-  - type: respond
-    issue: Welcome
-    with: debug.md
-    data:
-      contentId: '%actions.gitTipsPR%'
-      columnId: '%actions.doneColumn%'
   - type: octokit
     method: projects.createCard
     owner: '%payload.repository.owner.login%'
