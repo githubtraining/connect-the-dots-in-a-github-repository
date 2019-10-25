@@ -40,6 +40,7 @@ before:
     title: Add Git tips
     body: 00_add-git-tips.md
     head: add-git-tips
+    action_id: gitTipsPR
   - type: createStatus
     state: "failure"
     failure:
@@ -59,6 +60,28 @@ steps:
       - type: createIssue
         title: Find the similar issue
         body: 01_crosslink.md
+        action_id: similarIssue
+      - type: createProjectBoard
+        name: v1.0.0
+        description: Planning for v1.0.0 release
+        columns:
+        - Backlog
+        - Done
+        action_id: projectBoard
+      - type: octokit
+        method: projects.createColumn
+        project_id: '%actions.projectBoard.data.id%'
+        name: In Progress
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: ipColumn
+      - type: octokit
+        method: projects.createCard
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        content_id: '%actions.similarIssue.data.id%'
+        content_type: Issue
+        column_id: '%actions.ipColumn.data.id%'
       - type: createIssue
         title: There's something similar here
         body: 01_the-similar-crosslink.md
@@ -95,19 +118,28 @@ steps:
         right: '%payload.comment.body%'
       - type: respond
         with: 03_context.md
+        data:
+          commitId: '%payload.comment.body%'
 
 # Step 4: Finding info and context
   - title: Find context
     description: Create a link to the pull request where the commit was created
-    event: issue_comment.created
+    event: project_card.created
     link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
         left: '(5)'
         operator: test
-        right: '%payload.comment.body%'
+        right: '%payload.project_card.content_url%'
+        else:
+        - type: respond
+          with: e-wrong-pr.md
+          data:
+            commit: 312f87
+          issue: Find the similar issue
       - type: respond
         with: 04_find-broken-build.md
+        issue: Find the similar issue
 
 # Step 5:
   - title: Assign yourself
