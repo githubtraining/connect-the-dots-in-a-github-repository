@@ -48,28 +48,6 @@ before:
         Please make sure that all words are spelled correctly.
     sha: ab8fe26dfd24d863908a5074e704358023d11109
     context: failing-build
-  - type: createProjectBoard
-    name: v1.0.0
-    description: Planning for v1.0.0 release
-    columns:
-    - Backlog
-    - In progress
-    action_id: projectBoard
-  - type: octokit
-    method: projects.createColumn
-    project_id: '%actions.projectBoard.data.id%'
-    name: Done
-    owner: '%payload.repository.owner.login%'
-    repo: '%payload.repository.name%'
-    action_id: doneColumn
-  - type: octokit
-    method: projects.createCard
-    owner: '%payload.repository.owner.login%'
-    repo: '%payload.repository.name%'
-    content_id: '%actions.gitTipsPR.data.id%'
-    content_type: PullRequest
-    column_id: '%actions.doneColumn.data.id%'
-    action_id: prCard
 
 steps:
 
@@ -82,6 +60,28 @@ steps:
       - type: createIssue
         title: Find the similar issue
         body: 01_crosslink.md
+        action_id: similarIssue
+      - type: createProjectBoard
+        name: v1.0.0
+        description: Planning for v1.0.0 release
+        columns:
+        - Backlog
+        - Done
+        action_id: projectBoard
+      - type: octokit
+        method: projects.createColumn
+        project_id: '%actions.projectBoard.data.id%'
+        name: In Progress
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: ipColumn
+      - type: octokit
+        method: projects.createCard
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        content_id: '%actions.similarIssue.data.id%'
+        content_type: Issue
+        column_id: '%actions.ipColumn.data.id%'
       - type: createIssue
         title: There's something similar here
         body: 01_the-similar-crosslink.md
