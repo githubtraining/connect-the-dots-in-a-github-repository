@@ -57,33 +57,44 @@ steps:
     event: issues.closed
     link: '{{ repoUrl }}/issues/1'
     actions:
+      - type: gate
+        left: '%payload.issue.title%'
+        operator: ===
+        right: Welcome to this repository
+        else:
+        - type: respond
+          with: e-unexpected.md
+          data:
+            expected: close the issue titled **Welcome to this repository**
       - type: createIssue
-        title: Find the similar issue
-        body: 01_crosslink.md
+        title: Fix the sidebar
+        body: 01_sidebar.md
+        comments:
+        - 01_crosslink.md
         action_id: similarIssue
       - type: createProjectBoard
         name: v1.0.0
         description: Planning for v1.0.0 release
         columns:
         - Backlog
-        - Done
+        - In progress
         action_id: projectBoard
       - type: octokit
         method: projects.createColumn
         project_id: '%actions.projectBoard.data.id%'
-        name: In Progress
+        name: Done
         owner: '%payload.repository.owner.login%'
         repo: '%payload.repository.name%'
-        action_id: ipColumn
+        action_id: doneColumn
       - type: octokit
         method: projects.createCard
         owner: '%payload.repository.owner.login%'
         repo: '%payload.repository.name%'
         content_id: '%actions.similarIssue.data.id%'
         content_type: Issue
-        column_id: '%actions.ipColumn.data.id%'
+        column_id: '%actions.doneColumn.data.id%'
       - type: createIssue
-        title: There's something similar here
+        title: Broken sidebar
         body: 01_the-similar-crosslink.md
       - type: closeIssue
         issue: Welcome
@@ -100,9 +111,19 @@ steps:
     link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
-        left: '(8)'
-        operator: test
-        right: '%payload.comment.body%'
+        every: true
+        gates:
+          - left: '%payload.issue.title%'
+            operator: ===
+            right: Fix the sidebar
+          - left: '(8)'
+            operator: test
+            right: '%payload.comment.body%'
+        else:
+          - type: respond
+            with: e-unexpected.md
+            data:
+              expected: comment on the issue titled **Fix the sidebar** with the comment `#8`, the number of the similar issue
       - type: respond
         with: 02_find-commit.md
 
@@ -113,9 +134,19 @@ steps:
     link: '{{ repoUrl }}/issues/7'
     actions:
       - type: gate
-        left: '(312f87)'
-        operator: test
-        right: '%payload.comment.body%'
+        every: true
+        gates:
+          - left: '%payload.issue.title%'
+            operator: ===
+            right: Fix the sidebar
+          - left: '(312f87)'
+            operator: test
+            right: '%payload.comment.body%'
+        else:
+          - type: respond
+            with: e-unexpected.md
+            data:
+              expected: comment on the issue titled **Fix the sidebar** with the comment `312f872f79e50d505f02be5ddc97b3f7504d0189`, the SHA of the commit we're looking for
       - type: respond
         with: 03_context.md
         data:
@@ -133,13 +164,13 @@ steps:
         right: '%payload.project_card.content_url%'
         else:
         - type: respond
-          with: e-wrong-pr.md
+          with: e-unexpected.md
+          issue: Fix the sidebar
           data:
-            commit: 312f87
-          issue: Find the similar issue
+            expected: add pull request \#5 to the Done column of the v1.0.0 project
       - type: respond
         with: 04_find-broken-build.md
-        issue: Find the similar issue
+        issue: Fix the sidebar
 
 # Step 5:
   - title: Assign yourself
@@ -147,22 +178,41 @@ steps:
     event: pull_request.assigned
     link: '{{ repoUrl }}/issues/7'
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        operator: ===
+        right: Add Git tips
+        else:
+          - type: respond
+            with: e-unexpected.md
+            data:
+              expected: 'assign yourself to the pull request titled **Add Git tips**'
       - type: respond
         with: 05_fix-build.md
 
 # Step 6: Something to do with tests
   - title: Fix the broken build
     description: Fix the broken build in the pull request with a new commit
-    event: push
+    event: pull_request.synchronize
     link: '{{ repoUrl }}/pull/6'
     actions:
       - type: getFileContents
         filename: docs/git-tips.md
         action_id: fileContents
       - type: gate
-        left: '(tricks)'
-        operator: test
-        right: '%actions.fileContents%'
+        every: true
+        gates:
+          - left: '%payload.pull_request.title%'
+            operator: ===
+            right: Add Git tips
+          - left: '(tricks)'
+            operator: test
+            right: '%actions.fileContents%'
+        else:
+          - type: respond
+            with: e-unexpected.md
+            data:
+              expected: edit `docs/git-tips.md` on the `add-git-tips` branch so that the word "tricks" is properly spelled
       - type: createStatus
         state: success
         sha: '%payload.head_commit.id%'
@@ -173,9 +223,21 @@ steps:
 # Step 7: Merge pull request
   - title: Merge
     description: Merge the final pull request
-    event: push
+    event: pull_request.closed
     link: '{{ repoUrl }}/pull/6'
     actions:
+      - type: gate
+        every: true
+        gates:
+          - left: '%payload.pull_request.merged%'
+          - left: '%payload.pull_request.title%'
+            operator: ===
+            right: Add Git tips
+        else:
+          - type: respond
+            with: e-unexpected.md
+            data:
+              expected: merge the pull request titled **Add Git tips**
       - type: createIssue
         title: Congratulations!
         body: 07_congratulations.md

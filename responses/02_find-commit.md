@@ -1,3 +1,5 @@
+Great job finding the duplicate issue! Feel free to close the other issue as a duplicate of this one, but I'll leave it up to you. Let's move on to finding out if these issues ever led to a sidebar being added to our project!
+
 # Finding commits
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made - what is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
