@@ -77,22 +77,22 @@ steps:
         description: Planning for v1.0.0 release
         columns:
         - Backlog
-        - Done
+        - In progress
         action_id: projectBoard
       - type: octokit
         method: projects.createColumn
         project_id: '%actions.projectBoard.data.id%'
-        name: In Progress
+        name: Done
         owner: '%payload.repository.owner.login%'
         repo: '%payload.repository.name%'
-        action_id: ipColumn
+        action_id: doneColumn
       - type: octokit
         method: projects.createCard
         owner: '%payload.repository.owner.login%'
         repo: '%payload.repository.name%'
         content_id: '%actions.similarIssue.data.id%'
         content_type: Issue
-        column_id: '%actions.ipColumn.data.id%'
+        column_id: '%actions.doneColumn.data.id%'
       - type: createIssue
         title: Broken sidebar
         body: 01_the-similar-crosslink.md
@@ -167,7 +167,7 @@ steps:
           with: e-unexpected.md
           issue: Fix the sidebar
           data:
-            expected: add pull request #5 to the In Progress column of the v1.0.0 project
+            expected: add pull request \#5 to the Done column of the v1.0.0 project
       - type: respond
         with: 04_find-broken-build.md
         issue: Fix the sidebar
@@ -186,7 +186,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: 'assign yourself to the pull request titled **Add Git tips** to the In Progress column of the v1.0.0 project board'
+              expected: 'assign yourself to the pull request titled **Add Git tips**'
       - type: respond
         with: 05_fix-build.md
 
