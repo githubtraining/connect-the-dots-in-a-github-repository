@@ -67,8 +67,10 @@ steps:
           data:
             expected: close the issue titled **Welcome to this repository**
       - type: createIssue
-        title: Find the similar issue
-        body: 01_crosslink.md
+        title: Fix the sidebar
+        body: 01_sidebar.md
+        comments:
+        - 01_crosslink.md
         action_id: similarIssue
       - type: createProjectBoard
         name: v1.0.0
@@ -92,7 +94,7 @@ steps:
         content_type: Issue
         column_id: '%actions.ipColumn.data.id%'
       - type: createIssue
-        title: There's something similar here
+        title: Broken sidebar
         body: 01_the-similar-crosslink.md
       - type: closeIssue
         issue: Welcome
@@ -113,7 +115,7 @@ steps:
         gates:
           - left: '%payload.issue.title%'
             operator: ===
-            right: Find the similar issue
+            right: Fix the sidebar
           - left: '(8)'
             operator: test
             right: '%payload.comment.body%'
@@ -121,7 +123,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: comment on the issue titled **Find the similar issue** with the comment `#8`, the number of the similar issue
+              expected: comment on the issue titled **Fix the sidebar** with the comment `#8`, the number of the similar issue
       - type: respond
         with: 02_find-commit.md
 
@@ -136,7 +138,7 @@ steps:
         gates:
           - left: '%payload.issue.title%'
             operator: ===
-            right: Find the similar issue
+            right: Fix the sidebar
           - left: '(312f87)'
             operator: test
             right: '%payload.comment.body%'
@@ -144,7 +146,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: comment on the issue titled **Find the similar issue** with the comment `312f872f79e50d505f02be5ddc97b3f7504d0189`, the SHA of the commit we're looking for
+              expected: comment on the issue titled **Fix the sidebar** with the comment `312f872f79e50d505f02be5ddc97b3f7504d0189`, the SHA of the commit we're looking for
       - type: respond
         with: 03_context.md
         data:
@@ -163,12 +165,12 @@ steps:
         else:
         - type: respond
           with: e-unexpected.md
-          issue: Find the similar issue
+          issue: Fix the sidebar
           data:
             expected: add pull request #5 to the In Progress column of the v1.0.0 project
       - type: respond
         with: 04_find-broken-build.md
-        issue: Find the similar issue
+        issue: Fix the sidebar
 
 # Step 5:
   - title: Assign yourself
