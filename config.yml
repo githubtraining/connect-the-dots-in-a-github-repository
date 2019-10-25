@@ -144,7 +144,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: comment on the issue titled **Find the similar issue** with the comment `312f87`, the SHA of the commit we're looking for
+              expected: comment on the issue titled **Find the similar issue** with the comment `312f872f79e50d505f02be5ddc97b3f7504d0189`, the SHA of the commit we're looking for
       - type: respond
         with: 03_context.md
         data:
@@ -184,7 +184,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: assign yourself to the pull request titled **Add Git tips**
+              expected: 'assign yourself to the pull request titled **Add Git tips** to the In Progress column of the v1.0.0 project board'
       - type: respond
         with: 05_fix-build.md
 
@@ -210,7 +210,7 @@ steps:
           - type: respond
             with: e-unexpected.md
             data:
-              expected: edit `docs/git-tips.md` on this branch so that the word "tricks" is properly spelled
+              expected: edit `docs/git-tips.md` on the `add-git-tips` branch so that the word "tricks" is properly spelled
       - type: createStatus
         state: success
         sha: '%payload.head_commit.id%'
