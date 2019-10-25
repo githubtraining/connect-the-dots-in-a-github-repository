@@ -19,5 +19,5 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 ### :keyboard: Activity: Find and link to a related issue
 
 1. Please find the issue that is similar to this one
-   - This does _not_ mean that the issue is referenced, like in the last step - you should go look in the [Issues]({{ repoURL }}/issues) tab to find an issue with a similar title
+   - This does _not_ mean that the issue is referenced, like in the last step - you should go look in the [Issues]({{ repoUrl }}/issues) tab to find an issue with a similar title
 2. Comment in this issue with a reference to the related issue with a short description
