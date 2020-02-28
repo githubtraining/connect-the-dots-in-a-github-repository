@@ -8,6 +8,8 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 
 ## What you'll build
 
+![screenshot of webpage on github pages as final product](https://user-images.githubusercontent.com/9906718/75549655-70770600-5a30-11ea-97f8-970ddd6fb16f.png)
+
 - A GitHub Pages site with documentation about how to communicate effectively on GitHub
 
 ## Prerequisites
