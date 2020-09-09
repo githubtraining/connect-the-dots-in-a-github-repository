@@ -2,7 +2,7 @@
 
 Welcome to this Learning Lab course about finding your way through the history of GitHub repositories. For example, you could be working in repositories with a lot of history, many collaborators, or many files.
 
-Before you take this course, you may want to go through the [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) course on Learning Lab.
+Before you take this course, you may want to go through the [Introduction to GitHub]({{ host }}/{{ course.Owner.login }}/introduction-to-github) course on Learning Lab.
 
 In this course, you'll learn how to do lots of things, like:
 
