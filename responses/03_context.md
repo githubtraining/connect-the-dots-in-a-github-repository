@@ -17,7 +17,7 @@ The pull request is important because it goes beyond knowing when a commit happe
 
 Imagine you find an internal white-paper on a really exciting topic. You're looking for experts to help you research this topic for an upcoming project. When you find this article, you're ecstatic! But, there's no author referenced in the plain text.
 
-You can see that it's written in markdown, and it's versioned in GitHub. It's already a part of the `master` branch, but you want to know who was involved in creating this. You use `git blame` to see the author(s), and you can find the pull request associated with that branch. Now, you can see who all of the authors were, who the reviewers were, and if there are any other issues or conversations related to this topic.
+You can see that it's written in markdown, and it's versioned in GitHub. It's already a part of the `main` branch, but you want to know who was involved in creating this. You use `git blame` to see the author(s), and you can find the pull request associated with that branch. Now, you can see who all of the authors were, who the reviewers were, and if there are any other issues or conversations related to this topic.
 
 Just like that, you've found the people at your company who can help move your project forward. :tada:
 
